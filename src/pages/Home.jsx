@@ -4,7 +4,8 @@ import { FaSearch } from "react-icons/fa";
 import Loader from "../components/loader/Loader";
 
 const Home = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(" ");
+  const [error, setError] = useState(false);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const key = "a0eb95e54cfd2e5fc63e11fa5f59a409";
@@ -15,24 +16,44 @@ const Home = () => {
   const fetchdata = async () => {
     // alert("hii")
     try {
+      setLoading(true);
       let res = await fetch(url);
       let jsondata = await res.json();
-      console.log(jsondata);
-      setData(jsondata.articles); // Directly set articles to data
+      if(jsondata.articles){
+        setData(jsondata.articles);
+        setLoading(false);
+      }else{
+        setLoading(false)
+        setError(true);
+      }
+     
     } catch (err) {
       console.log(err);
+      setError(true);
+
     }
   };
 
   const handleSearch = async (searchValue) => {
     setLoading(true);
-    let res = await fetch(
-      `https://gnews.io/api/v4/search?q=${searchValue}&lang=en&country=us&max=20&apikey=${key}`
-    );
-    let jsondata = await res.json();
-    console.log(jsondata);
-    setData(jsondata.articles); // Directly set articles to data
-    setLoading(false);
+
+    try {
+      setLoading(true);
+      let res = await fetch(
+        `https://gnews.io/api/v4/search?q=${searchValue}&lang=en&country=us&max=20&apikey=${key}`
+      );
+      let jsondata = await res.json();
+      if(jsondata.articles){
+        setData(jsondata.articles);
+        setLoading(false);
+      }else{
+        setLoading(false)
+        setError(true);
+      }
+    } catch (err) {
+      console.log(err);
+      setError(true);
+    }
   };
 
   useEffect(() => {
@@ -94,7 +115,7 @@ const Home = () => {
             <Loader />
           ) : (
             <div className="cards-area">
-              {data.map((element, index) => {
+              {data?.map((element, index) => {
                 return (
                   <Card
                     key={index}
@@ -106,8 +127,9 @@ const Home = () => {
               })}
             </div>
           )}
-        </div>
+          {error ? <h3 className="error">Something went wrong! API not working</h3> : ""}
 
+        </div>
       </div>
     </>
   );

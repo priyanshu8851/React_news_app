@@ -109,3 +109,7 @@ outline: none;
             width:90%
         }
 }
+.error{
+    margin-bottom: 40px;
+    color:rgb(210, 36, 36);
+}
