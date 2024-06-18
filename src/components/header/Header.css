@@ -23,4 +23,6 @@ footer{
     justify-content: center;
     align-items: center;
     height:70px;
+    background-color:rgb(185, 12, 12) ;
+    width:100%;
 }
