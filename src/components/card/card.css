@@ -1,0 +1,24 @@
+.card{
+    width:280px;
+    /* background-color: black; */
+    min-height:320px;
+    padding: 10px;
+    background-color: #fff;
+    transition: ease all 0.4s;
+    border-radius: 8px;
+}
+.card:hover{
+    cursor: pointer;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.card img{
+    width:100%;
+    border-radius:6px ;
+}
+.card h3{
+    margin: 8px 0;
+}
+.card p{
+    font-size: 12px;
+    margin-bottom: 20px;
+}

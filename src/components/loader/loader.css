@@ -1,0 +1,26 @@
+.custom-loader {
+    width: 120px;
+    height: 22px;
+    border-radius: 20px;
+    color:  rgb(185, 12, 12);
+    border: 2px solid;
+    position: relative;
+    margin-top: 50px;
+  }
+  
+  .custom-loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background:  rgb(185, 12, 12);
+    animation: p6 2s infinite;
+  }
+  
+  @keyframes p6 {
+    100% {
+      inset: 0
+    }
+  }
+  

@@ -1,0 +1,19 @@
+header{
+    background-color: rgb(185, 12, 12); 
+    height: 60px;
+    position:relative;
+    z-index: 99;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+.innerHeader{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+}
+.github_icon{
+    font-size: 24px;
+    color: #fff ;
+    line-height: 24px;
+}
