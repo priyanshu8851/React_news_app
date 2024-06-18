@@ -9,7 +9,7 @@ const Header = () => {
             <span className="logo">
                 New-z
             </span>
-           <span className='github_icon'> <FaGithub /></span>
+           <a className='github_icon' href='https://github.com/priyanshu8851/React_news_app'> <FaGithub /></a>
         </div>
     </header>
     </>

@@ -62,7 +62,9 @@ const Home = () => {
                         </div>
                         )
                     }
-                   
+                   <footer>
+                    <p>Made by priyanshu</p>
+                   </footer>
                 </div>
             </div>
         </>
