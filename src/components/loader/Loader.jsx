@@ -1,12 +1,12 @@
-import React from 'react'
 import './loader.css'
 
 
 const Loader = () => {
   return (
-    <>
-    <div className="custom-loader"></div>
-    </>
+    <div className="loading-state" role="status" aria-label="Loading news">
+      <span className="loading-bar" />
+      <p>Gathering the latest stories…</p>
+    </div>
   )
 }
 
